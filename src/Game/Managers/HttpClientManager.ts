@@ -1,0 +1,4 @@
+class HttpClientManager {
+	public constructor() {
+	}
+}

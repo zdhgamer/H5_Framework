@@ -1,0 +1,4 @@
+class SocketEvents {
+	public constructor() {
+	}
+}

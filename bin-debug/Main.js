@@ -166,25 +166,8 @@ var Main = (function (_super) {
      * Create scene interface
      */
     Main.prototype.createGameScene = function () {
-        this._grpLayout = new eui.Group();
-        this._grpLayout.horizontalCenter = 0;
-        this._grpLayout.verticalCenter = 0;
-        this._grpLayout.width = 1280;
-        this._grpLayout.height = 720;
-        this.addChild(this._grpLayout);
-        this._grpLayout.layout = new eui.BasicLayout();
-        var btn = new TestTS();
-        btn.horizontalCenter = 0;
-        btn.verticalCenter = 0;
-        this._grpLayout.addChild(btn);
-        var btn = new TestTS();
-        btn.top = 20;
-        btn.left = 20;
-        this._grpLayout.addChild(btn);
-        var btn = new TestTS();
-        btn.right = 20;
-        btn.bottom = 20;
-        this._grpLayout.addChild(btn);
+        var appStartFacade = AppStartFacade.getInstance(AppStartFacade.Name);
+        appStartFacade.StartApp();
     };
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
