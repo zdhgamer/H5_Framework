@@ -1,0 +1,14 @@
+1：首先打开项目的跟目录
+2：执行命令（# 将代码和项目结构拷贝至项目中）：
+	pb-egret add
+3：编写proto文件，执行命令（# 将 protofile 文件放在 egret-project/protobuf/protofile 文件夹中）：
+	pb-egret generate
+4:改动tsconfig.json，加入下面代码：
+	"include": [
+	"src",
+	"libs",
+	"protobuf/**/*.d.ts"
+	],
+5：在项目的index.html中引入下面代码
+    <script type="text/javascript" src="../protobuf/library/protobuf-library.js"></script>
+    <script type="text/javascript" src="../protobuf/bundles/protobuf-bundles.js"></script>

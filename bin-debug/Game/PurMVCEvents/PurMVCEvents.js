@@ -4,13 +4,13 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 var PurMVCEvents = (function () {
     function PurMVCEvents() {
     }
-    /*
-    * app启动命令
-    */
+    /**
+     * app启动命令
+     */
     PurMVCEvents.AppStart = "AppStart";
-    /*
-* app启动命令
-*/
+    /**
+     * app成功启动
+     */
     PurMVCEvents.AppStarted = "AppStarted";
     return PurMVCEvents;
 }());

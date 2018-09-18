@@ -4,6 +4,7 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 var SocketEvents = (function () {
     function SocketEvents() {
     }
+    SocketEvents.TestMID = 1001;
     return SocketEvents;
 }());
 __reflect(SocketEvents.prototype, "SocketEvents");

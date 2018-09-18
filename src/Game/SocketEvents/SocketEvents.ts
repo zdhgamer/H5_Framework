@@ -1,4 +1,3 @@
 class SocketEvents {
-	public constructor() {
-	}
+	public static TestMID = 1001;
 }

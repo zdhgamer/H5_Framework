@@ -4,6 +4,9 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 var AppConst = (function () {
     function AppConst() {
     }
+    /**
+     * websocket服务器地址
+     */
     AppConst.webSocketServerUrl = "ws://127.0.0.1:8282";
     return AppConst;
 }());
