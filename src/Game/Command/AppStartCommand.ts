@@ -8,6 +8,7 @@ class AppStartCommand extends puremvc.SimpleCommand {
 	{
 		super.execute(notification);
 		this.initWebSocket();
+		this.initSound();
 		let appStartProxy = <AppStartProxy>super.facade().retrieveProxy(AppStartProxy.NAME);
 		appStartProxy.StartedApp();
 	}
@@ -20,6 +21,13 @@ class AppStartCommand extends puremvc.SimpleCommand {
 		WebSocketManager.getInstance().onSocketCloseCall = this.onSocketClose;
 		WebSocketManager.getInstance().onSocketIOErrorCall = this.onSocketIOError;
 		WebSocketManager.getInstance().connectToServer();
+	}
+
+	/**
+	 * 初始化音乐和音效
+	 */
+	public initSound():void{
+		SoundManager.getInstance().playBgSound();
 	}
 
 	// /**

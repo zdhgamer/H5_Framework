@@ -16,8 +16,7 @@ var AppStartCommand = (function (_super) {
     AppStartCommand.prototype.execute = function (notification) {
         _super.prototype.execute.call(this, notification);
         this.initWebSocket();
-        HttpClientManager.getInstance().sendHttpPostForm("http://localhost:8888/BD/UserLoginServletAction", function (result, data) {
-        }, null);
+        this.initSound();
         var appStartProxy = _super.prototype.facade.call(this).retrieveProxy(AppStartProxy.NAME);
         appStartProxy.StartedApp();
     };
@@ -29,6 +28,12 @@ var AppStartCommand = (function (_super) {
         WebSocketManager.getInstance().onSocketCloseCall = this.onSocketClose;
         WebSocketManager.getInstance().onSocketIOErrorCall = this.onSocketIOError;
         WebSocketManager.getInstance().connectToServer();
+    };
+    /**
+     * 初始化音乐和音效
+     */
+    AppStartCommand.prototype.initSound = function () {
+        SoundManager.getInstance().playBgSound();
     };
     // /**
     //  * 测试注册监听

@@ -1,2 +1,2 @@
-declare class Test extends eui.Skin{
+declare class TestTSSkin extends eui.Skin{
 }

@@ -1,20 +1,30 @@
 {
 	"groups": [
 		{
-			"keys": "description_json,01_jpg",
+			"keys": "description_json,Login_01_mp3,01_jpg,Music_mp3",
 			"name": "preload"
 		}
 	],
 	"resources": [
 		{
-			"name": "description_json",
+			"url": "config/description.json",
 			"type": "json",
-			"url": "config/description.json"
+			"name": "description_json"
 		},
 		{
-			"name": "01_jpg",
+			"url": "assets/sound/Login_01.mp3",
+			"type": "sound",
+			"name": "Login_01_mp3"
+		},
+		{
+			"url": "assets/png/01.jpg",
 			"type": "image",
-			"url": "assets/png/01.jpg"
+			"name": "01_jpg"
+		},
+		{
+			"name": "Music_mp3",
+			"type": "sound",
+			"url": "assets/sound/Music.mp3"
 		}
 	]
 }

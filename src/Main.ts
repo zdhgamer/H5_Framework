@@ -67,7 +67,7 @@ class Main extends eui.UILayer {
         await platform.login();
         const userInfo = await platform.getUserInfo();
         console.log(userInfo);
-
+        console.log("资源加载完成");
     }
 
     private async loadResource() {
@@ -102,6 +102,7 @@ class Main extends eui.UILayer {
      * Create scene interface
      */
     protected createGameScene(): void {
+        console.log("创建场景界面");
         let appStartFacade = AppStartFacade.getInstance(AppStartFacade.Name);
         appStartFacade.StartApp();
     }

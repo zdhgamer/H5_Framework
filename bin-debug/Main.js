@@ -116,6 +116,7 @@ var Main = (function (_super) {
                     case 4:
                         userInfo = _a.sent();
                         console.log(userInfo);
+                        console.log("资源加载完成");
                         return [2 /*return*/];
                 }
             });
@@ -166,6 +167,7 @@ var Main = (function (_super) {
      * Create scene interface
      */
     Main.prototype.createGameScene = function () {
+        console.log("创建场景界面");
         var appStartFacade = AppStartFacade.getInstance(AppStartFacade.Name);
         appStartFacade.StartApp();
     };
