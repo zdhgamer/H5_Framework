@@ -20,25 +20,24 @@ class AppStartCommand extends puremvc.SimpleCommand {
 		WebSocketManager.getInstance().onSocketCloseCall = this.onSocketClose;
 		WebSocketManager.getInstance().onSocketIOErrorCall = this.onSocketIOError;
 		WebSocketManager.getInstance().connectToServer();
-		this.registerTest();
 	}
 
-	/**
-	 * 测试注册监听
-	 */
-	private registerTest():void{
-		WebSocketManager.getInstance().registerMsgFunction(SocketEvents.TestMID,this.onReceiveTest);
-	}
+	// /**
+	//  * 测试注册监听
+	//  */
+	// private registerTest():void{
+	// 	WebSocketManager.getInstance().registerMsgFunction(SocketEvents.TestMID,this.onReceiveTest);
+	// }
 
 	/**
 	 * 网络连接成功
 	 */
 	public onSocketOpen():void{		
-		let temp = new awesomepackage.ZZ();
-		temp.aa = "zdh";
-		let msgWrite = awesomepackage.ZZ.encode(temp);
-		let msgData = msgWrite.finish();
-		WebSocketManager.getInstance().sendMsg(SocketEvents.TestMID,msgData);
+		// let temp = new awesomepackage.ZZ();
+		// temp.aa = "zdh";
+		// let msgWrite = awesomepackage.ZZ.encode(temp);
+		// let msgData = msgWrite.finish();
+		// WebSocketManager.getInstance().sendMsg(SocketEvents.TestMID,msgData);
 	}
 
 	/**
@@ -55,11 +54,11 @@ class AppStartCommand extends puremvc.SimpleCommand {
 
 	}
 
-	/**
-	 * 接收到测试消息
-	 */
-	public onReceiveTest(msg:WebSocketReceiveMsgData):void{
-		console.log("收到服务器的消息");
-	}
+	// /**
+	//  * 接收到测试消息
+	//  */
+	// public onReceiveTest(msg:WebSocketReceiveMsgData):void{
+	// 	console.log("收到服务器的消息");
+	// }
 
 }

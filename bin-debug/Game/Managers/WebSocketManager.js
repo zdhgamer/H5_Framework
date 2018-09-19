@@ -116,7 +116,6 @@ var WebSocketManager = (function () {
     WebSocketManager.prototype.dispatchMsg = function (msgData) {
         var msgId = msgData.MsgId;
         var temp = this.msgFunctionMap[msgId];
-        console.log(this.msgFunctionMap[msgId]);
         if (this.msgFunctionMap[msgId]) {
             for (var i = 0; i < this.msgFunctionMap[msgId].length; i++) {
                 if (this.msgFunctionMap[msgId][i]) {
