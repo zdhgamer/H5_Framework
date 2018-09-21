@@ -6,6 +6,7 @@ import { UglifyPlugin, CompilePlugin, ManifestPlugin, ExmlPlugin, EmitResConfigF
 import { WxgamePlugin } from './wxgame/wxgame';
 import { CustomPlugin } from './myplugin';
 import * as defaultConfig from './config';
+import { ResPlugin } from './resPlugin';
 
 const config: ResourceManagerConfig = {
 
@@ -38,6 +39,7 @@ const config: ResourceManagerConfig = {
                         target: "main.min.js"
                     }
                     ]),
+                    new ResPlugin(),
                     new ManifestPlugin({ output: 'manifest.js' })
                 ]
             }
