@@ -18,38 +18,51 @@ var AppStartCommand = (function (_super) {
         this.initWebSocket();
         this.initSound();
         var appStartProxy = _super.prototype.facade.call(this).retrieveProxy(AppStartProxy.NAME);
+        var mainStage = notification.getBody();
+        UIManager.getInstane().MainStage = mainStage;
         appStartProxy.StartedApp();
     };
     /**
      * 初始化网络
      */
     AppStartCommand.prototype.initWebSocket = function () {
-        WebSocketManager.getInstance().onSocketOpenCall = this.onSocketOpen;
-        WebSocketManager.getInstance().onSocketCloseCall = this.onSocketClose;
-        WebSocketManager.getInstance().onSocketIOErrorCall = this.onSocketIOError;
+        WebSocketManager.getInstance().onSocketOpenCall = this.onSocketOpen.bind(this);
+        WebSocketManager.getInstance().onSocketCloseCall = this.onSocketClose.bind(this);
+        WebSocketManager.getInstance().onSocketIOErrorCall = this.onSocketIOError.bind(this);
         WebSocketManager.getInstance().connectToServer();
     };
     /**
      * 初始化音乐和音效
      */
     AppStartCommand.prototype.initSound = function () {
-        SoundManager.getInstance().playBgSound();
+        SoundManager.getInstance();
+        var timer = new egret.Timer(5000, 1);
+        timer.addEventListener(egret.TimerEvent.TIMER, this.onSoundTimerCall, this);
+        timer.addEventListener(egret.TimerEvent.TIMER_COMPLETE, this.onSoundTimerComplete, this);
+        //开始计时
+        timer.start();
     };
-    // /**
-    //  * 测试注册监听
-    //  */
-    // private registerTest():void{
-    // 	WebSocketManager.getInstance().registerMsgFunction(SocketEvents.TestMID,this.onReceiveTest);
-    // }
+    /**
+     * 音乐定时器触发
+     */
+    AppStartCommand.prototype.onSoundTimerCall = function () {
+        SoundManager.getInstance().playTest();
+    };
+    /**
+     *  音乐定时器结束
+     */
+    AppStartCommand.prototype.onSoundTimerComplete = function () {
+    };
     /**
      * 网络连接成功
      */
     AppStartCommand.prototype.onSocketOpen = function () {
-        // let temp = new awesomepackage.ZZ();
-        // temp.aa = "zdh";
-        // let msgWrite = awesomepackage.ZZ.encode(temp);
-        // let msgData = msgWrite.finish();
-        // WebSocketManager.getInstance().sendMsg(SocketEvents.TestMID,msgData);
+        console.log(this);
+        var temp = new awesomepackage.ZZ();
+        temp.aa = "zdh";
+        var msgWrite = awesomepackage.ZZ.encode(temp);
+        var msgData = msgWrite.finish();
+        WebSocketManager.getInstance().sendMsg(SocketEvents.TestMID, msgData, this.onReceiveTest);
     };
     /**
      * 与服务器连接关闭
@@ -60,6 +73,12 @@ var AppStartCommand = (function (_super) {
      * 发生IO错误
      */
     AppStartCommand.prototype.onSocketIOError = function () {
+    };
+    /**
+     * 接收到测试消息
+     */
+    AppStartCommand.prototype.onReceiveTest = function (msg) {
+        console.log("收到服务器的消息");
     };
     return AppStartCommand;
 }(puremvc.SimpleCommand));

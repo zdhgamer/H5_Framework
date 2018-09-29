@@ -20,6 +20,7 @@ export class ResPlugin implements plugins.Command {
             file.contents = new Buffer(JSON.stringify(JSON.parse(file.contents.toString())));
         }
         var path = file.origin;
+        console.log(path);
         //对resource/assets下面的资源进行版本控制
         if (path.indexOf(this.versionPath) != -1 && (file.extname === ".mp3" || file.extname === ".fnt" || file.extname === ".json" || file.extname === ".png" || file.extname === ".jpg")) {
             path = path.replace(this.versionPath, "");

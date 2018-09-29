@@ -8,12 +8,18 @@ class SoundManager {
 	private bgSound: egret.Sound;
 
 	/**
+	 * 测试
+	 */
+	private testAuto:egret.Sound;
+
+	/**
 	 * 背景音乐的播放管道
 	 */
 	private bgSoundChan: egret.SoundChannel;
 
 	public constructor() {
 		this.bgSound = RES.getRes("Music_mp3");
+		this.testAuto = RES.getRes("Login_01_mp3");
 	}
 
 	public static getInstance(): SoundManager {
@@ -89,6 +95,13 @@ class SoundManager {
 		if (this.bgSoundChan != null) {
 			this.bgSoundChan.stop();
 		}
+	}
+
+	/**
+	 * 播放测试
+	 */
+	public playTest():void{
+		this.testAuto.play();
 	}
 
 }

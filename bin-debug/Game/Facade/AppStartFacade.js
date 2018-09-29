@@ -30,8 +30,8 @@ var AppStartFacade = (function (_super) {
         _super.prototype.initializeView.call(this);
         _super.prototype.registerMediator.call(this, new AppStartMediator());
     };
-    AppStartFacade.prototype.StartApp = function () {
-        _super.prototype.sendNotification.call(this, PurMVCEvents.AppStart);
+    AppStartFacade.prototype.StartApp = function (mainStage) {
+        _super.prototype.sendNotification.call(this, PurMVCEvents.AppStart, mainStage);
     };
     AppStartFacade.Name = "AppStartFacade";
     return AppStartFacade;

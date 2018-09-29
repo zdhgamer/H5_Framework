@@ -1,8 +1,0 @@
-{
-	"skins": {},
-	"autoGenerateExmlsList": true,
-	"exmls": [
-		"resource/eui_skins/Test.exml"
-	],
-	"path": "resource/default.thm.json"
-}

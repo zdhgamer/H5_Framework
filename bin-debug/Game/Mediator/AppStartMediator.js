@@ -23,8 +23,25 @@ var AppStartMediator = (function (_super) {
         switch (notification.getName()) {
             case PurMVCEvents.AppStarted:
                 console.log("框架启动完成");
+                this.loadMainView();
                 break;
         }
+    };
+    /**
+     * 加载一个测试界面
+     */
+    AppStartMediator.prototype.loadMainView = function () {
+        this.mainView = new MainView();
+        UIManager.getInstane().addSubView(this.mainView);
+        this.mainView.Button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTestBtnClick, this);
+    };
+    /**
+     * 测试按钮点击方法
+     */
+    AppStartMediator.prototype.onTestBtnClick = function () {
+        console.log(this);
+        this.tips = new Tips();
+        UIManager.getInstane().addSubView(this.tips);
     };
     AppStartMediator.NAME = 'AppStartMediator';
     return AppStartMediator;

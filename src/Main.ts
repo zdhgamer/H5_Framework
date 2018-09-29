@@ -104,8 +104,28 @@ class Main extends eui.UILayer {
     protected createGameScene(): void {
         console.log("创建场景界面");
         let appStartFacade = AppStartFacade.getInstance(AppStartFacade.Name);
-        appStartFacade.StartApp();
+        appStartFacade.StartApp(this);
     }
+
+    /**
+     * 添加其他的子界面
+     */
+    public addSubView(subView:eui.Component,index?:number):void{
+        if(index){
+            this.addChildAt(subView,index);
+        }
+        else{
+            this.addChild(subView);
+        }
+    }
+
+    /**
+     * 移除其他的子界面
+     */
+    public removeSubView(subView:eui.Component):void{
+        this.removeChild(subView);
+    }
+
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
      * Create a Bitmap object according to name keyword.As for the property of name please refer to the configuration file of resources/resource.json.

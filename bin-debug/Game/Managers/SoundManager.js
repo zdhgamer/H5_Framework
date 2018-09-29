@@ -4,6 +4,7 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 var SoundManager = (function () {
     function SoundManager() {
         this.bgSound = RES.getRes("Music_mp3");
+        this.testAuto = RES.getRes("Login_01_mp3");
     }
     SoundManager.getInstance = function () {
         if (!this.instance) {
@@ -83,6 +84,12 @@ var SoundManager = (function () {
         if (this.bgSoundChan != null) {
             this.bgSoundChan.stop();
         }
+    };
+    /**
+     * 播放测试
+     */
+    SoundManager.prototype.playTest = function () {
+        this.testAuto.play();
     };
     return SoundManager;
 }());

@@ -32,8 +32,8 @@ class AppStartFacade extends puremvc.Facade {
 		super.registerMediator(new AppStartMediator())
 	}
 
-	public StartApp():void{
-		super.sendNotification(PurMVCEvents.AppStart);
+	public StartApp(mainStage:Main):void{
+		super.sendNotification(PurMVCEvents.AppStart,mainStage);
 	}
 
 }

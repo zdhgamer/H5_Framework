@@ -8,5 +8,15 @@
         "path": "Game\\ExmlTS\\TestTS.ts",
         "class": "TestTS",
         "parentPath": ""
+    },
+    "1661ef331c1": {
+        "path": "Game\\ExmlTS\\MainView.ts",
+        "class": "MainView",
+        "parentPath": ""
+    },
+    "1661f52302d": {
+        "path": "Game\\ExmlTS\\Tips.ts",
+        "class": "Tips",
+        "parentPath": ""
     }
 }

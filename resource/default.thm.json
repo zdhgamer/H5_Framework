@@ -1,7 +1,12 @@
 {
-    "autoGenerateExmlsList": true,
-    "exmls": [
-        
-    ],
-    "path": "resource/default.thm.json"
+	"autoGenerateExmlsList": true,
+	"exmls": [
+		"resource/eui_skins/MainView.exml",
+		"resource/eui_skins/Tips.exml"
+	],
+	"path": "resource/default.thm.json",
+	"skins": {
+		"MainView": "resource/eui_skins/MainView.exml",
+		"Tips": "resource/eui_skins/Tips.exml"
+	}
 }

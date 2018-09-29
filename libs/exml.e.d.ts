@@ -1,2 +1,4 @@
-declare class TestTSSkin extends eui.Skin{
+declare class MainViewSkin extends eui.Skin{
+}
+declare class TipsSkin extends eui.Skin{
 }

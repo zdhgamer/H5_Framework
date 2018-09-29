@@ -169,7 +169,24 @@ var Main = (function (_super) {
     Main.prototype.createGameScene = function () {
         console.log("创建场景界面");
         var appStartFacade = AppStartFacade.getInstance(AppStartFacade.Name);
-        appStartFacade.StartApp();
+        appStartFacade.StartApp(this);
+    };
+    /**
+     * 添加其他的子界面
+     */
+    Main.prototype.addSubView = function (subView, index) {
+        if (index) {
+            this.addChildAt(subView, index);
+        }
+        else {
+            this.addChild(subView);
+        }
+    };
+    /**
+     * 移除其他的子界面
+     */
+    Main.prototype.removeSubView = function (subView) {
+        this.removeChild(subView);
     };
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
