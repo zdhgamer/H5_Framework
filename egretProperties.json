@@ -43,14 +43,6 @@
 				{
 						"name": "protobuf-bundles",
 						"path": "protobuf/bundles"
-				},
-				{
-						"name": "protobuf-library",
-						"path": "protobuf/library"
-				},
-				{
-						"name": "protobuf-bundles",
-						"path": "protobuf/bundles"
 				}
 		],
 		"targets": {

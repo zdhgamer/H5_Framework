@@ -1,8 +1,12 @@
 {
 	"groups": [
 		{
-			"keys": "description_json,Login_01_mp3,01_jpg,Music_mp3",
+			"keys": "description_json,Login_01_mp3,Music_mp3,num_fnt,num_png",
 			"name": "preload"
+		},
+		{
+			"keys": "loading_bg_png,loading_png,num_png,num_fnt",
+			"name": "loading"
 		}
 	],
 	"resources": [
@@ -17,14 +21,34 @@
 			"name": "Login_01_mp3"
 		},
 		{
+			"url": "assets/sound/Music.mp3",
+			"type": "sound",
+			"name": "Music_mp3"
+		},
+		{
+			"url": "assets/loading/loading.png",
+			"type": "image",
+			"name": "loading_png"
+		},
+		{
+			"url": "assets/loading/loading_bg.png",
+			"type": "image",
+			"name": "loading_bg_png"
+		},
+		{
+			"url": "assets/loading/num.fnt",
+			"type": "font",
+			"name": "num_fnt"
+		},
+		{
+			"url": "assets/loading/num.png",
+			"type": "image",
+			"name": "num_png"
+		},
+		{
 			"url": "assets/png/01.jpg",
 			"type": "image",
 			"name": "01_jpg"
-		},
-		{
-			"name": "Music_mp3",
-			"type": "sound",
-			"url": "assets/sound/Music.mp3"
 		}
 	]
 }

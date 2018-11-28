@@ -18,5 +18,10 @@
         "path": "Game\\ExmlTS\\Tips.ts",
         "class": "Tips",
         "parentPath": ""
+    },
+    "16752c5a67d": {
+        "path": "..\\resource\\eui_skins\\ResLoadingUI.ts",
+        "class": "ResLoadingUI",
+        "parentPath": ""
     }
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ResLoadingUISkin" width="1280" height="720" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16752c5a67d" ></w:Config>
+	<e:BitmapLabel id="progress" width="310" height="94" y="466.86" anchorOffsetX="0" anchorOffsetY="0" font="num_fnt" text="1%" textAlign="center" verticalAlign="top" scaleY="2" scaleX="2" horizontalCenter="-17"/>
+	<e:Image id="loading_bg" source="loading_bg_png" anchorOffsetX="0" width="896.26" anchorOffsetY="0" height="212.86" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image id="loading" source="loading_png" anchorOffsetX="0" width="180.19" anchorOffsetY="0" height="170.71" verticalCenter="0" horizontalCenter="0"/>
+</e:Skin>

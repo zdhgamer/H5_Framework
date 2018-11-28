@@ -9,8 +9,6 @@
 		"libs/modules/socket/socket.js",
 		"libs/modules/promise/promise.js",
 		"protobuf/library/protobuf-library.js",
-		"protobuf/bundles/protobuf-bundles.js",
-		"protobuf/library/protobuf-library.js",
 		"protobuf/bundles/protobuf-bundles.js"
 	],
 	"game": [
@@ -38,6 +36,7 @@
 		"bin-debug/Game/Command/AppStartCommand.js",
 		"bin-debug/Game/PurMVC/src/org/puremvc/typescript/multicore/interfaces/IProxy.js",
 		"bin-debug/Game/ExmlTS/MainView.js",
+		"bin-debug/Game/ExmlTS/ResLoadingUI.js",
 		"bin-debug/Game/ExmlTS/Tips.js",
 		"bin-debug/Game/Facade/AppStartFacade.js",
 		"bin-debug/Game/Managers/HttpClient.js",
