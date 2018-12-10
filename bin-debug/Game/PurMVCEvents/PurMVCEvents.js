@@ -15,4 +15,3 @@ var PurMVCEvents = (function () {
     return PurMVCEvents;
 }());
 __reflect(PurMVCEvents.prototype, "PurMVCEvents");
-//# sourceMappingURL=PurMVCEvents.js.map

@@ -8,4 +8,3 @@ var SocketEvents = (function () {
     return SocketEvents;
 }());
 __reflect(SocketEvents.prototype, "SocketEvents");
-//# sourceMappingURL=SocketEvents.js.map

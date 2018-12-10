@@ -37,4 +37,3 @@ var HttpGetFormData = (function () {
     return HttpGetFormData;
 }());
 __reflect(HttpGetFormData.prototype, "HttpGetFormData");
-//# sourceMappingURL=HttpFormData.js.map

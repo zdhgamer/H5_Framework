@@ -1,54 +1,66 @@
 {
-		"engineVersion": "5.2.3",
-		"compilerVersion": "5.2.3",
-		"template": {},
-		"target": {
-				"current": "web"
-		},
-		"eui": {
-				"exmlRoot": [
-						"resource/eui_skins"
-				],
-				"themes": [
-						"resource/default.thm.json"
-				],
-				"exmlPublishPolicy": "commonjs"
-		},
-		"modules": [
-				{
-						"name": "egret"
-				},
-				{
-						"name": "eui"
-				},
-				{
-						"name": "assetsmanager"
-				},
-				{
-						"name": "tween"
-				},
-				{
-						"name": "game"
-				},
-				{
-						"name": "socket"
-				},
-				{
-						"name": "promise"
-				},
-				{
-						"name": "protobuf-library",
-						"path": "protobuf/library"
-				},
-				{
-						"name": "protobuf-bundles",
-						"path": "protobuf/bundles"
-				}
-		],
-		"targets": {
-				"android": {
-						"appname": "1",
-						"packagename": "com.zdh"
-				}
-		}
+  "engineVersion": "5.2.3",
+  "compilerVersion": "5.2.3",
+  "template": {},
+  "target": {
+    "current": "web"
+  },
+  "eui": {
+    "exmlRoot": [
+      "resource/eui_skins"
+    ],
+    "themes": [
+      "resource/default.thm.json"
+    ],
+    "exmlPublishPolicy": "commonjs"
+  },
+  "modules": [
+    {
+      "name": "egret"
+    },
+    {
+      "name": "eui"
+    },
+    {
+      "name": "assetsmanager"
+    },
+    {
+      "name": "tween"
+    },
+    {
+      "name": "game"
+    },
+    {
+      "name": "socket"
+    },
+    {
+      "name": "promise"
+    },
+    {
+      "name": "protobuf-library",
+      "path": "protobuf/library"
+    },
+    {
+      "name": "protobuf-bundles",
+      "path": "protobuf/bundles"
+    },
+    {
+      "name": "protobuf-library",
+      "path": "protobuf/library"
+    },
+    {
+      "name": "protobuf-bundles",
+      "path": "protobuf/bundles"
+    },
+    {
+      "name": "weixinapi",
+      "path": "./libs/weixinapi"
+    }
+  ],
+  "targets": {
+    "android": {
+      "appname": "1",
+      "packagename": "com.zdh"
+    }
+  }
 }

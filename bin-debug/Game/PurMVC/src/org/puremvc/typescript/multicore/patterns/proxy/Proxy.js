@@ -115,4 +115,3 @@ var puremvc;
     puremvc.Proxy = Proxy;
     __reflect(Proxy.prototype, "puremvc.Proxy", ["puremvc.IProxy"]);
 })(puremvc || (puremvc = {}));
-//# sourceMappingURL=Proxy.js.map

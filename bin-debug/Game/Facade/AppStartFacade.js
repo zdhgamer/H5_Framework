@@ -37,4 +37,3 @@ var AppStartFacade = (function (_super) {
     return AppStartFacade;
 }(puremvc.Facade));
 __reflect(AppStartFacade.prototype, "AppStartFacade");
-//# sourceMappingURL=AppStartFacade.js.map

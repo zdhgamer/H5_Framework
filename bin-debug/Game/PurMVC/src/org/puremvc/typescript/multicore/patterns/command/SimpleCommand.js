@@ -43,4 +43,3 @@ var puremvc;
     puremvc.SimpleCommand = SimpleCommand;
     __reflect(SimpleCommand.prototype, "puremvc.SimpleCommand", ["puremvc.ICommand"]);
 })(puremvc || (puremvc = {}));
-//# sourceMappingURL=SimpleCommand.js.map

@@ -209,4 +209,3 @@ var puremvc;
     puremvc.Controller = Controller;
     __reflect(Controller.prototype, "puremvc.Controller", ["puremvc.IController"]);
 })(puremvc || (puremvc = {}));
-//# sourceMappingURL=Controller.js.map

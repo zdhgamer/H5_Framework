@@ -275,4 +275,3 @@ var puremvc;
     puremvc.View = View;
     __reflect(View.prototype, "puremvc.View", ["puremvc.IView"]);
 })(puremvc || (puremvc = {}));
-//# sourceMappingURL=View.js.map

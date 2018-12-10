@@ -90,4 +90,3 @@ var HttpClient = (function () {
     return HttpClient;
 }());
 __reflect(HttpClient.prototype, "HttpClient");
-//# sourceMappingURL=HttpClient.js.map

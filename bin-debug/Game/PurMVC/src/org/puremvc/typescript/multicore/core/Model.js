@@ -162,4 +162,3 @@ var puremvc;
     puremvc.Model = Model;
     __reflect(Model.prototype, "puremvc.Model", ["puremvc.IModel"]);
 })(puremvc || (puremvc = {}));
-//# sourceMappingURL=Model.js.map
