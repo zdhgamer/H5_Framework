@@ -416,3 +416,4 @@ var puremvc;
     puremvc.Facade = Facade;
     __reflect(Facade.prototype, "puremvc.Facade", ["puremvc.IFacade", "puremvc.INotifier"]);
 })(puremvc || (puremvc = {}));
+//# sourceMappingURL=Facade.js.map

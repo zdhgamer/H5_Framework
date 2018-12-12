@@ -29,7 +29,7 @@
 
 class Main extends eui.UILayer {
 
-    private loadingView: LoadingUI;
+    private loadingView: ResLoadingUI;
     private _grpLayout: eui.Group;
 
     protected createChildren(): void {
@@ -75,10 +75,12 @@ class Main extends eui.UILayer {
             await RES.loadConfig("resource/default.res.json", "resource/");
             await this.loadTheme();
             await RES.loadGroup("loading");
-            const loadingView = new ResLoadingUI();
-            this.stage.addChild(loadingView);
-            await RES.loadGroup("preload", 0, loadingView);
-            this.stage.removeChild(loadingView);
+            this.loadingView = new ResLoadingUI();
+            this.stage.addChild(this.loadingView);
+            await RES.loadGroup("preload", 0, this.loadingView);
+            this.stage.removeChild(this.loadingView);
+            this.loadingView = null;
+            console.log("当前舞台子组件个数："+this.stage.numChildren);
         }
         catch (e) {
             console.error(e);

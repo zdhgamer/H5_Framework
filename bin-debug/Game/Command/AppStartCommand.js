@@ -83,3 +83,4 @@ var AppStartCommand = (function (_super) {
     return AppStartCommand;
 }(puremvc.SimpleCommand));
 __reflect(AppStartCommand.prototype, "AppStartCommand");
+//# sourceMappingURL=AppStartCommand.js.map

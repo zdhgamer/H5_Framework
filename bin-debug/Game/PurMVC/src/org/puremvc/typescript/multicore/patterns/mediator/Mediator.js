@@ -134,3 +134,4 @@ var puremvc;
     puremvc.Mediator = Mediator;
     __reflect(Mediator.prototype, "puremvc.Mediator", ["puremvc.IMediator"]);
 })(puremvc || (puremvc = {}));
+//# sourceMappingURL=Mediator.js.map

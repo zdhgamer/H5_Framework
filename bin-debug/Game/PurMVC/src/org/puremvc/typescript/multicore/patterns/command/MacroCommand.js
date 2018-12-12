@@ -121,3 +121,4 @@ var puremvc;
     puremvc.MacroCommand = MacroCommand;
     __reflect(MacroCommand.prototype, "puremvc.MacroCommand", ["puremvc.ICommand"]);
 })(puremvc || (puremvc = {}));
+//# sourceMappingURL=MacroCommand.js.map

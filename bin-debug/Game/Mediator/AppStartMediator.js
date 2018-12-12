@@ -34,6 +34,7 @@ var AppStartMediator = (function (_super) {
         this.mainView = new MainView();
         UIManager.getInstane().addSubView(this.mainView);
         this.mainView.Button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTestBtnClick.bind(this), this);
+        console.log("当前舞台子组件个数：" + UIManager.getInstane().MainStage.numChildren);
     };
     /**
      * 测试按钮点击方法
@@ -42,6 +43,7 @@ var AppStartMediator = (function (_super) {
         console.log(this);
         this.tips = new Tips();
         UIManager.getInstane().addSubView(this.tips);
+        console.log("当前舞台子组件个数：" + UIManager.getInstane().MainStage.numChildren);
         this.autho();
     };
     /**
@@ -50,7 +52,7 @@ var AppStartMediator = (function (_super) {
     AppStartMediator.prototype.autho = function () {
         var appid = "wx20b7d401030b8032";
         var appsecret = "abf14af264d2c32216c881b73b687721";
-        var redirect_uri = decodeURI("http://47.106.180.129/static/index.html");
+        var redirect_uri = decodeURI("http://47.106.180.129/static/index2.html");
         var scope = "snsapi_userinfo";
         var url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + appid + "&redirect_uri=" + redirect_uri + "&response_type=code&scope=" + scope + "&state=STATE#wechat_redirect";
         console.log(url);
@@ -63,3 +65,4 @@ var AppStartMediator = (function (_super) {
     return AppStartMediator;
 }(puremvc.Mediator));
 __reflect(AppStartMediator.prototype, "AppStartMediator");
+//# sourceMappingURL=AppStartMediator.js.map

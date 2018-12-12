@@ -18,3 +18,4 @@ var AppStartEntity = (function () {
     return AppStartEntity;
 }());
 __reflect(AppStartEntity.prototype, "AppStartEntity");
+//# sourceMappingURL=AppStartEntity.js.map

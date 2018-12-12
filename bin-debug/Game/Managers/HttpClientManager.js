@@ -28,3 +28,4 @@ var HttpClientManager = (function () {
     return HttpClientManager;
 }());
 __reflect(HttpClientManager.prototype, "HttpClientManager");
+//# sourceMappingURL=HttpClientManager.js.map

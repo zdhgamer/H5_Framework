@@ -123,3 +123,4 @@ var puremvc;
     puremvc.Notification = Notification;
     __reflect(Notification.prototype, "puremvc.Notification", ["puremvc.INotification"]);
 })(puremvc || (puremvc = {}));
+//# sourceMappingURL=Notification.js.map

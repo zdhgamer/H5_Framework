@@ -32,8 +32,9 @@ var HttpClient = (function () {
     /**
      * http的get请求发送错误
      */
-    HttpClient.prototype.onHttpGetIOError = function () {
-        console.log("发送http的get请求返回错误");
+    HttpClient.prototype.onHttpGetIOError = function (event) {
+        var request = event.currentTarget;
+        console.log("发送http的get请求返回错误:" + request.response);
         if (this.getCallBack) {
             this.getCallBack(false, "");
         }
@@ -76,8 +77,9 @@ var HttpClient = (function () {
     /**
      * http的post请求发送错误
      */
-    HttpClient.prototype.onHttpPostIOError = function () {
-        console.log("发送http的post请求返回错误");
+    HttpClient.prototype.onHttpPostIOError = function (event) {
+        var request = event.currentTarget;
+        console.log("发送http的post请求返回错误:", request.response);
         if (this.postCallBack) {
             this.postCallBack(true, "");
         }
@@ -90,3 +92,4 @@ var HttpClient = (function () {
     return HttpClient;
 }());
 __reflect(HttpClient.prototype, "HttpClient");
+//# sourceMappingURL=HttpClient.js.map

@@ -35,7 +35,23 @@ class AppStartMediator extends puremvc.Mediator{
 	public loadMainView():void{
 		this.mainView = new MainView();
 		UIManager.getInstane().addSubView(this.mainView);
-		this.mainView.Button.addEventListener(egret.TouchEvent.TOUCH_TAP,this.onTestBtnClick.bind(this),this);
+		console.log("当前舞台子组件个数："+UIManager.getInstane().MainStage.numChildren);
+		console.log(window.location.href);
+		if(window.location.href.indexOf("code")>0){
+			console.log(window.location.href);
+			let params:string[] = window.location.href.split("&");
+			for(let i=0;i<params.length;i++){
+				if(params[i].indexOf("code")>0){
+					let code :string[] = params[i].split("=");
+					HttpClientManager.getInstance().sendHttpByGet("http://47.106.180.129/getUserInfo?code="+code[1],(data)=>{
+						console.log("返回的微信用户数据是："+data);
+					})
+				}
+			}
+		}
+		else{
+			this.mainView.Button.addEventListener(egret.TouchEvent.TOUCH_TAP,this.onTestBtnClick.bind(this),this);
+		}
 	}
 
 	/**
@@ -45,6 +61,7 @@ class AppStartMediator extends puremvc.Mediator{
 		console.log(this);
 		this.tips = new Tips();
 		UIManager.getInstane().addSubView(this.tips);
+		console.log("当前舞台子组件个数："+UIManager.getInstane().MainStage.numChildren);
 		this.autho();
 	}
 

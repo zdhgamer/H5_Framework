@@ -140,3 +140,4 @@ var WebSocketManager = (function () {
     return WebSocketManager;
 }());
 __reflect(WebSocketManager.prototype, "WebSocketManager");
+//# sourceMappingURL=WebSocketManager.js.map

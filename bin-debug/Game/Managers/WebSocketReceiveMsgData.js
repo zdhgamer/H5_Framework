@@ -27,3 +27,4 @@ var WebSocketReceiveMsgData = (function () {
     return WebSocketReceiveMsgData;
 }());
 __reflect(WebSocketReceiveMsgData.prototype, "WebSocketReceiveMsgData");
+//# sourceMappingURL=WebSocketReceiveMsgData.js.map

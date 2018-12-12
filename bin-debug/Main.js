@@ -124,7 +124,7 @@ var Main = (function (_super) {
     };
     Main.prototype.loadResource = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var loadingView, e_1;
+            var e_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -138,12 +138,14 @@ var Main = (function (_super) {
                         return [4 /*yield*/, RES.loadGroup("loading")];
                     case 3:
                         _a.sent();
-                        loadingView = new ResLoadingUI();
-                        this.stage.addChild(loadingView);
-                        return [4 /*yield*/, RES.loadGroup("preload", 0, loadingView)];
+                        this.loadingView = new ResLoadingUI();
+                        this.stage.addChild(this.loadingView);
+                        return [4 /*yield*/, RES.loadGroup("preload", 0, this.loadingView)];
                     case 4:
                         _a.sent();
-                        this.stage.removeChild(loadingView);
+                        this.stage.removeChild(this.loadingView);
+                        this.loadingView = null;
+                        console.log("当前舞台子组件个数：" + this.stage.numChildren);
                         return [3 /*break*/, 6];
                     case 5:
                         e_1 = _a.sent();
@@ -210,3 +212,4 @@ var Main = (function (_super) {
     return Main;
 }(eui.UILayer));
 __reflect(Main.prototype, "Main");
+//# sourceMappingURL=Main.js.map

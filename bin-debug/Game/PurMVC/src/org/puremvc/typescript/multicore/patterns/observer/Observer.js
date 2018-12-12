@@ -117,3 +117,4 @@ var puremvc;
     puremvc.Observer = Observer;
     __reflect(Observer.prototype, "puremvc.Observer", ["puremvc.IObserver"]);
 })(puremvc || (puremvc = {}));
+//# sourceMappingURL=Observer.js.map

@@ -7,4 +7,5 @@ import (
 
 func init() {
     beego.Router("/", &controllers.WxConnectController{})
+	beego.Router("/getUserInfo", &controllers.UserInfoConnectController{})
 }

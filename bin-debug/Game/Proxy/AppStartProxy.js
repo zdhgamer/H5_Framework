@@ -26,3 +26,4 @@ var AppStartProxy = (function (_super) {
     return AppStartProxy;
 }(puremvc.Proxy));
 __reflect(AppStartProxy.prototype, "AppStartProxy");
+//# sourceMappingURL=AppStartProxy.js.map

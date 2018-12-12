@@ -24,6 +24,11 @@ class ResLoadingUI extends eui.Component implements eui.UIComponent, RES.Promise
 		super.partAdded(partName, instance);
 	}
 
+	 protected partRemoved(partName: string, instance: any): void{
+		 super.partRemoved(partName,instance);
+		 egret.Tween.removeTweens(this.loading);
+		 console.log("移除动画组件")
+	 }
 
 	protected childrenCreated(): void {
 		super.childrenCreated();
@@ -36,8 +41,8 @@ class ResLoadingUI extends eui.Component implements eui.UIComponent, RES.Promise
 	}
 
 	private OnTweenChangFunc():void{
-		console.log(this);
-		console.log("当前旋转角度为："+this.loading.rotation.toString());
+		// console.log(this);
+		// console.log("当前旋转角度为："+this.loading.rotation.toString());
 	}
 
 	/**
@@ -45,6 +50,10 @@ class ResLoadingUI extends eui.Component implements eui.UIComponent, RES.Promise
 	 */
 	public onProgress(current: number, total: number): void {
 		this.progress.text =parseInt((current/total)*100+"")+"%";
+		if(current>=total){
+		 egret.Tween.removeTweens(this.loading);
+		 console.log("移除动画组件");
+		}
     }
 
 }

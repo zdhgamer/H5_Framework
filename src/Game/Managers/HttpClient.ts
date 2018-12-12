@@ -43,8 +43,9 @@ class HttpClient {
 	/**
 	 * http的get请求发送错误
 	 */
-	private onHttpGetIOError(): void {
-		console.log("发送http的get请求返回错误");
+	private onHttpGetIOError(event: egret.Event): void {
+		var request = <egret.HttpRequest>event.currentTarget;
+		console.log("发送http的get请求返回错误:"+ request.response);
 		if (this.getCallBack) {
 			this.getCallBack(false, "");
 		}
@@ -93,8 +94,9 @@ class HttpClient {
 	/**
 	 * http的post请求发送错误
 	 */
-	private onHttpPostIOError(): void {
-		console.log("发送http的post请求返回错误");
+	private onHttpPostIOError(event: egret.Event): void {
+		var request = <egret.HttpRequest>event.currentTarget;
+		console.log("发送http的post请求返回错误:",request.response);
 		if (this.postCallBack) {
 			this.postCallBack(true, "");
 		}
