@@ -33,8 +33,23 @@ var AppStartMediator = (function (_super) {
     AppStartMediator.prototype.loadMainView = function () {
         this.mainView = new MainView();
         UIManager.getInstane().addSubView(this.mainView);
-        this.mainView.Button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTestBtnClick.bind(this), this);
         console.log("当前舞台子组件个数：" + UIManager.getInstane().MainStage.numChildren);
+        console.log(window.location.href);
+        if (window.location.href.indexOf("code") > 0) {
+            console.log(window.location.href);
+            var params = window.location.href.split("&");
+            for (var i = 0; i < params.length; i++) {
+                if (params[i].indexOf("code") > 0) {
+                    var code = params[i].split("=");
+                    HttpClientManager.getInstance().sendHttpByGet("http://47.106.180.129/getUserInfo?code=" + code[1], function (data) {
+                        console.log("返回的微信用户数据是：" + data);
+                    });
+                }
+            }
+        }
+        else {
+            this.mainView.Button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTestBtnClick.bind(this), this);
+        }
     };
     /**
      * 测试按钮点击方法
@@ -52,14 +67,11 @@ var AppStartMediator = (function (_super) {
     AppStartMediator.prototype.autho = function () {
         var appid = "wx20b7d401030b8032";
         var appsecret = "abf14af264d2c32216c881b73b687721";
-        var redirect_uri = decodeURI("http://47.106.180.129/static/index2.html");
+        var redirect_uri = decodeURI("http://47.106.180.129/static/index.html");
         var scope = "snsapi_userinfo";
         var url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + appid + "&redirect_uri=" + redirect_uri + "&response_type=code&scope=" + scope + "&state=STATE#wechat_redirect";
         console.log(url);
-        // window.location.href = url;
-        HttpClientManager.getInstance().sendHttpByGet(url, function (data) {
-            console.log(data);
-        });
+        window.location.href = url;
     };
     AppStartMediator.NAME = 'AppStartMediator';
     return AppStartMediator;

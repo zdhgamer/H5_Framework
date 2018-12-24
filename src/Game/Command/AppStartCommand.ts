@@ -59,6 +59,7 @@ class AppStartCommand extends puremvc.SimpleCommand {
 		temp.aa = "zdh";
 		let msgWrite = awesomepackage.ZZ.encode(temp);
 		let msgData = msgWrite.finish();
+		console.log(new Date().getTime())
 		WebSocketManager.getInstance().sendMsg(SocketEvents.TestMID, msgData,this.onReceiveTest);
 	}
 
@@ -80,7 +81,8 @@ class AppStartCommand extends puremvc.SimpleCommand {
 	 * 接收到测试消息
 	 */
 	public onReceiveTest(msg: WebSocketReceiveMsgData): void {
-		console.log("收到服务器的消息");
+		console.log(new Date().getTime())
+		console.log("收到服务器的消息"+msg.MsgData);
 	}
 
 }

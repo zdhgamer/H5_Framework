@@ -62,6 +62,7 @@ var AppStartCommand = (function (_super) {
         temp.aa = "zdh";
         var msgWrite = awesomepackage.ZZ.encode(temp);
         var msgData = msgWrite.finish();
+        console.log(new Date().getTime());
         WebSocketManager.getInstance().sendMsg(SocketEvents.TestMID, msgData, this.onReceiveTest);
     };
     /**
@@ -78,7 +79,8 @@ var AppStartCommand = (function (_super) {
      * 接收到测试消息
      */
     AppStartCommand.prototype.onReceiveTest = function (msg) {
-        console.log("收到服务器的消息");
+        console.log(new Date().getTime());
+        console.log("收到服务器的消息" + msg.MsgData);
     };
     return AppStartCommand;
 }(puremvc.SimpleCommand));

@@ -7,7 +7,7 @@ var AppConst = (function () {
     /**
      * websocket服务器地址
      */
-    AppConst.webSocketServerUrl = "ws://127.0.0.1:8282";
+    AppConst.webSocketServerUrl = "ws://127.0.0.1:8010/ws";
     return AppConst;
 }());
 __reflect(AppConst.prototype, "AppConst");

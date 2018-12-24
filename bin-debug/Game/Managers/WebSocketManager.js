@@ -59,7 +59,7 @@ var WebSocketManager = (function () {
     WebSocketManager.prototype.onReceiveMsg = function (e) {
         var bytes = new egret.ByteArray();
         this.socket.readBytes(bytes);
-        var msgId = parseInt(bytes.readUTFBytes(4));
+        var msgId = bytes.readInt();
         var msgValue = new Uint8Array(bytes.buffer.slice(4, bytes.bytesAvailable + 4));
         var msgData = new WebSocketReceiveMsgData();
         msgData.MsgId = msgId;
@@ -133,8 +133,9 @@ var WebSocketManager = (function () {
         }
         var msgData = new egret.ByteArray(msg);
         var msgArray = new egret.ByteArray();
-        msgArray.writeUTFBytes(msgId + "");
+        msgArray.writeInt(msgId);
         msgArray.writeBytes(msgData);
+        console.log(msgArray.bytes);
         this.socket.writeBytes(msgArray, 0, msgArray.bytesAvailable);
     };
     return WebSocketManager;

@@ -73,7 +73,7 @@ class WebSocketManager {
 	private onReceiveMsg(e: egret.Event): void {
 		let bytes: egret.ByteArray = new egret.ByteArray();
 		this.socket.readBytes(bytes);
-		let msgId = parseInt(bytes.readUTFBytes(4));
+		let msgId = bytes.readInt();
 		let msgValue = new Uint8Array(bytes.buffer.slice(4,bytes.bytesAvailable+4));
 		let msgData = new WebSocketReceiveMsgData();
 		msgData.MsgId = msgId;
@@ -154,8 +154,9 @@ class WebSocketManager {
 		}
 		let msgData = new egret.ByteArray(msg);		
 		let msgArray = new egret.ByteArray();
-		msgArray.writeUTFBytes(msgId+"");
+		msgArray.writeInt(msgId);
 		msgArray.writeBytes(msgData);
+		console.log(msgArray.bytes)
 		this.socket.writeBytes(msgArray,0,msgArray.bytesAvailable);
 	}
 
