@@ -81,6 +81,8 @@ var AppStartCommand = (function (_super) {
     AppStartCommand.prototype.onReceiveTest = function (msg) {
         console.log(new Date().getTime());
         console.log("收到服务器的消息" + msg.MsgData);
+        var data = awesomepackage.ZZ.decode(msg.MsgData);
+        console.log("解析出来，服务器返回的消息是：" + data.aa);
     };
     return AppStartCommand;
 }(puremvc.SimpleCommand));

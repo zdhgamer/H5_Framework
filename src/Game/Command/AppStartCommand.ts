@@ -83,6 +83,8 @@ class AppStartCommand extends puremvc.SimpleCommand {
 	public onReceiveTest(msg: WebSocketReceiveMsgData): void {
 		console.log(new Date().getTime())
 		console.log("收到服务器的消息"+msg.MsgData);
+		let data = awesomepackage.ZZ.decode(msg.MsgData);
+		console.log("解析出来，服务器返回的消息是："+data.aa);
 	}
 
 }
