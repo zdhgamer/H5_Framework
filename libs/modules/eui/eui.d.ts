@@ -380,7 +380,7 @@ declare namespace eui.sys {
     }
 }
 declare namespace eui {
-    function getAssets(source: string, callback: (content: any) => void, thisObject: any): void;
+    function getAssets(source: string, callback: (content: any) => void): void;
     function getTheme(source: string, callback: (content: any) => void): void;
     /**
      * The UIComponent class is the base class for all visual components, both skinnable and nonskinnable.
@@ -625,7 +625,6 @@ declare namespace eui {
         /**
          * Number that specifies the explicit width of the component,
          * in pixels, in the component's coordinates.
-         * @readOnly
          * @version Egret 2.4
          * @version eui 1.0
          * @platform Web,Native
@@ -633,13 +632,12 @@ declare namespace eui {
          */
         /**
          * 外部显式指定的宽度。
-         * @readOnly
          * @version Egret 2.4
          * @version eui 1.0
          * @platform Web,Native
          * @language zh_CN
          */
-        readonly explicitWidth: number;
+        explicitWidth: number;
         /**
          * Number that specifies the explicit height of the component,
          * in pixels, in the component's coordinates.
@@ -657,7 +655,7 @@ declare namespace eui {
          * @platform Web,Native
          * @language zh_CN
          */
-        readonly explicitHeight: number;
+        explicitHeight: number;
         /**
          * The minimum recommended width of the component to be considered
          * by the parent during layout. This value is in the
@@ -13229,7 +13227,7 @@ declare namespace EXML {
     /**
      * @private
      */
-    function $parseURLContent(url: string, text: string | any): any;
+    function $parseURLContent(url: string, text: string): any;
 }
 declare namespace eui.sys {
     /**

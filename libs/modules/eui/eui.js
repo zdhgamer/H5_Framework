@@ -984,13 +984,13 @@ var eui;
 /// <reference path="Validator.ts" />
 var eui;
 (function (eui) {
-    function getAssets(source, callback, thisObject) {
+    function getAssets(source, callback) {
         var adapter = egret.getImplementation("eui.IAssetAdapter");
         if (!adapter) {
             adapter = new eui.DefaultAssetAdapter();
         }
         adapter.getAsset(source, function (content) {
-            callback.call(thisObject, content);
+            callback(content);
         }, this);
     }
     eui.getAssets = getAssets;
@@ -6664,9 +6664,6 @@ var eui;
          * @language zh_CN
          */
         ListBase.prototype.onRendererTouchBegin = function (event) {
-            if (!this.$stage) {
-                return;
-            }
             var values = this.$ListBase;
             if (event.$isDefaultPrevented)
                 return;
@@ -10528,23 +10525,24 @@ var eui;
          * 解析source
          */
         Image.prototype.parseSource = function () {
+            var _this = this;
             this.sourceChanged = false;
             var source = this._source;
             if (source && typeof source == "string") {
                 eui.getAssets(this._source, function (data) {
-                    if (source !== this._source)
+                    if (source !== _this._source)
                         return;
                     if (!egret.is(data, "egret.Texture")) {
                         return;
                     }
-                    this.$setTexture(data);
+                    _this.$setTexture(data);
                     if (data) {
-                        this.dispatchEventWith(egret.Event.COMPLETE);
+                        _this.dispatchEventWith(egret.Event.COMPLETE);
                     }
                     else if (true) {
                         egret.$warn(2301, source);
                     }
-                }, this);
+                });
             }
             else {
                 this.$setTexture(source);
@@ -10993,9 +10991,6 @@ var eui;
          * @language zh_CN
          */
         ItemRenderer.prototype.onTouchBegin = function (event) {
-            if (!this.$stage) {
-                return;
-            }
             this.$stage.addEventListener(egret.TouchEvent.TOUCH_CANCEL, this.onTouchCancle, this);
             this.$stage.addEventListener(egret.TouchEvent.TOUCH_END, this.onStageTouchEnd, this);
             this.touchCaptured = true;
@@ -14376,9 +14371,6 @@ var eui;
          * @param event
          */
         Scroller.prototype.onTouchBeginCapture = function (event) {
-            if (!this.$stage) {
-                return;
-            }
             this.$Scroller[12 /* touchCancle */] = false;
             var canScroll = this.checkScrollPolicy();
             if (!canScroll) {
@@ -14651,10 +14643,7 @@ var eui;
          * @param scrollPos
          */
         Scroller.prototype.horizontalUpdateHandler = function (scrollPos) {
-            var viewport = this.$Scroller[10 /* viewport */];
-            if (viewport) {
-                viewport.scrollH = scrollPos;
-            }
+            this.$Scroller[10 /* viewport */].scrollH = scrollPos;
             this.dispatchEventWith(egret.Event.CHANGE);
         };
         /**
@@ -14663,10 +14652,7 @@ var eui;
          * @param scrollPos
          */
         Scroller.prototype.verticalUpdateHandler = function (scrollPos) {
-            var viewport = this.$Scroller[10 /* viewport */];
-            if (viewport) {
-                viewport.scrollV = scrollPos;
-            }
+            this.$Scroller[10 /* viewport */].scrollV = scrollPos;
             this.dispatchEventWith(egret.Event.CHANGE);
         };
         /**
@@ -17833,7 +17819,7 @@ var eui;
          *
          */
         EditableText.prototype.$onRemoveFromStage = function () {
-            _super.prototype.$onRemoveFromStage.call(this);
+            eui.sys.UIComponentImpl.prototype["$onRemoveFromStage"].call(this);
             this.removeEventListener(egret.FocusEvent.FOCUS_IN, this.onfocusIn, this);
             this.removeEventListener(egret.FocusEvent.FOCUS_OUT, this.onfocusOut, this);
         };
@@ -20812,12 +20798,13 @@ var eui;
          * 解析source
          */
         BitmapLabel.prototype.$parseFont = function () {
+            var _this = this;
             this.$fontChanged = false;
             var font = this.$fontForBitmapLabel;
             if (typeof font == "string") {
                 eui.getAssets(font, function (bitmapFont) {
-                    this.$setFontData(bitmapFont, font);
-                }, this);
+                    _this.$setFontData(bitmapFont, font);
+                });
             }
             else {
                 this.$setFontData(font);
@@ -21247,16 +21234,13 @@ var EXML;
      */
     function $parseURLContent(url, text) {
         var clazz = null;
-        if (text && typeof (text) == "string") {
+        if (text) {
             try {
                 clazz = parse(text);
             }
             catch (e) {
                 console.error(url + "\n" + e.message);
             }
-        }
-        if (text && text["prototype"]) {
-            clazz = text;
         }
         if (url) {
             if (clazz) {
